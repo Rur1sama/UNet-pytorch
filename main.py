@@ -160,8 +160,8 @@ if __name__ == "__main__":
     test = False
 
     num_classes = 2
-
-    model_pretrained = True
+    
+    model_pretrained = False
     model_path = r"checkpoints/2024-10-13-17-18-06/model_state_dict_loss0.1564_epoch18.pth"  
 
     input_shape = [512, 512]
