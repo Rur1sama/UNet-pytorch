@@ -13,7 +13,7 @@ This is a pytorch implementation of UNet for semantic segmentation especially fo
 Create the environment and install the requirements.
 ```
 git clone https://github.com/JeasunLok/UNet-pytorch.git
-conda create -n unet python=3.9
+conda create -n unet python=3.10
 conda activate unet
 pip install -r requirements.txt
 ```
