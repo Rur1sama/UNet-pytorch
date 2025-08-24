@@ -22,6 +22,21 @@ warnings.filterwarnings("ignore")
 #-------------------------------------------------------------------------------
 # train model
 def train_epoch(model, train_loader, criterion, optimizer, e, epoch, device, num_classes, scaler, fp16, ignore_index=-1):
+    """_summary_
+
+    :param model: _description_
+    :param train_loader: _description_
+    :param criterion: _description_
+    :param optimizer: _description_
+    :param e: _description_
+    :param epoch: _description_
+    :param device: _description_
+    :param num_classes: _description_
+    :param scaler: _description_
+    :param fp16: _description_
+    :param ignore_index: _description_, defaults to -1
+    :return: _description_
+    """
     loss_show = AverageMeter()
     local_rank = int(os.environ.get("LOCAL_RANK", 0))
     acc = 0
@@ -116,6 +131,15 @@ def valid_epoch(model, val_loader, criterion, e, epoch, device, num_classes, ign
 #-------------------------------------------------------------------------------
 # test model
 def test_epoch(model, test_loader, device, num_classes, ignore_index=-1):
+    """_summary_
+
+    :param model: _description_
+    :param test_loader: _description_
+    :param device: _description_
+    :param num_classes: _description_
+    :param ignore_index: _description_, defaults to -1
+    :return: _description_
+    """
     local_rank = int(os.environ.get("LOCAL_RANK", 0))
     acc = 0
     mIoU = 0
@@ -161,13 +185,13 @@ if __name__ == "__main__":
 
     num_classes = 2
     
-    model_pretrained = False
+    model_pretrained = False # 断点是否启动( False / True )
     model_path = r"checkpoints/2024-10-13-17-18-06/model_state_dict_loss0.1564_epoch18.pth"  
 
     input_shape = [512, 512]
-    epoch = 20
+    epoch = 20 # 模型运行轮数 
     save_period = 1
-    batch_size = 32
+    batch_size = 8 # 批量运行数目
     ignore_index = -1 # None
 
     # 学习率
@@ -206,7 +230,7 @@ if __name__ == "__main__":
         device = torch.device("cpu")
         local_rank = 0
 
-    model = UNet(n_channels=3, n_classes=num_classes)
+    model = UNet(n_channels=3, n_classes=num_classes) # 调用UNet模型
     model_train = model.train()
     if Cuda:
         if distributed:

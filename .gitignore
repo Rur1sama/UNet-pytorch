@@ -163,3 +163,48 @@ cython_debug/
 
 # vscode
 .vscode
+
+# Project-specific ignores
+# checkpoints 不添加至更新
+VS_Project/UNet-pytorch/checkpoints
+
+checkpoints/2025-08-21-20-39-01/model_loss0.26_epoch5.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.371_epoch2.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.1488_epoch19.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.1499_epoch18.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.1555_epoch15.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.1667_epoch16.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.1668_epoch17.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.1754_epoch20.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.1775_epoch13.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.1798_epoch14.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.1813_epoch10.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.1958_epoch12.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.1978_epoch8.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.2036_epoch7.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.2264_epoch11.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.2384_epoch9.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.2527_epoch4.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.2685_epoch6.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.2811_epoch3.pth
+checkpoints/2025-08-21-20-39-01/model_loss0.5914_epoch1.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.26_epoch5.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.371_epoch2.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.1488_epoch19.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.1499_epoch18.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.1555_epoch15.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.1667_epoch16.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.1668_epoch17.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.1754_epoch20.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.1775_epoch13.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.1798_epoch14.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.1813_epoch10.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.1958_epoch12.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.1978_epoch8.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.2036_epoch7.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.2264_epoch11.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.2384_epoch9.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.2527_epoch4.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.2685_epoch6.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.2811_epoch3.pth
+checkpoints/2025-08-21-20-39-01/model_state_dict_loss0.5914_epoch1.pth

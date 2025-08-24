@@ -213,41 +213,60 @@ def compute_metrics(CM, ignore_index=-1):
     return weighted_Recall, weighted_Precision, weighted_F1
 
 def draw_result_visualization(folder, epoch_result):
-    # the change of loss
-    np.savetxt(os.path.join(folder, "epoch.txt"), epoch_result, fmt="%.4f", delimiter=',', newline='\n')
-    with plt.ioff():
-      plt.figure()
-      plt.plot(epoch_result[:][0], epoch_result[:][1])
-      plt.title("the change of the loss")
-      plt.xlabel("epoch")
-      plt.ylabel("loss")
-      plt.savefig(os.path.join(folder, "loss_change.png"))
-      plt.figure()
-      plt.plot(epoch_result[:][0], epoch_result[:][2])
-      plt.title("the change of the accuracy")
-      plt.xlabel("epoch")
-      plt.ylabel("accuracy")
-      plt.savefig(os.path.join(folder, "accuracy_change.png"))
-      plt.figure()
-      plt.plot(epoch_result[:][0], epoch_result[:][3])
-      plt.title("the change of the MIoU")
-      plt.xlabel("epoch")
-      plt.ylabel("MIoU")
-      plt.savefig(os.path.join(folder, "MIoU_change.png"))
+  """结果可视化
+
+  :param folder: 指定保存的绝对路径
+  :param epoch_result: 该周期的结果
+  """
+  # the change of loss
+  np.savetxt(os.path.join(folder, "epoch.txt"), epoch_result, fmt="%.4f", delimiter=',', newline='\n')
+  with plt.ioff():
+    plt.figure()
+    plt.plot(epoch_result[:][0], epoch_result[:][1])
+    plt.title("the change of the loss")
+    plt.xlabel("epoch")
+    plt.ylabel("loss")
+    plt.savefig(os.path.join(folder, "loss_change.png"))
+    plt.figure()
+    plt.plot(epoch_result[:][0], epoch_result[:][2])
+    plt.title("the change of the accuracy")
+    plt.xlabel("epoch")
+    plt.ylabel("accuracy")
+    plt.savefig(os.path.join(folder, "accuracy_change.png"))
+    plt.figure()
+    plt.plot(epoch_result[:][0], epoch_result[:][3])
+    plt.title("the change of the MIoU")
+    plt.xlabel("epoch")
+    plt.ylabel("MIoU")
+    plt.savefig(os.path.join(folder, "MIoU_change.png"))
 
 def store_result(folder, Accuracy, mIoU, W_Recall, W_Precision, W_F1, CM, epoch, batch_size, learning_rate, weight_decay):
-    with open(os.path.join(folder, "accuracy.txt"), 'w', encoding="utf-8") as f:
-        f.write("Parameter settings:" + "\n")
-        f.write("epoch : " + str(epoch) + "\n")
-        f.write("batch_size : " + str(batch_size) + "\n")
-        f.write("learning_rate : " + str(learning_rate) + "\n")
-        f.write("weight_decay : " + str(weight_decay) + "\n")
-        f.write("Model result:" + "\n")
-        f.write("Accuracy : {:.4f}\n".format(Accuracy))
-        f.write("mIoU : {:.4f}\n".format(mIoU))
-        f.write("W-Recall : {:.3f}\n".format(W_Recall))
-        f.write("W-Precision : {:.3f}\n".format(W_Precision))
-        f.write("W-F1 : {:.3f}\n".format(W_F1))
-        f.write("Confusion Matrix :\n")
-        f.write("{}".format(CM))
+  """保存结果
+
+  :param folder: 指定保存的绝对路径
+  :param Accuracy: 
+  :param mIoU: _description_
+  :param W_Recall: _description_
+  :param W_Precision: _description_
+  :param W_F1: _description_
+  :param CM: _description_
+  :param epoch: _description_
+  :param batch_size: _description_
+  :param learning_rate: _description_
+  :param weight_decay: _description_
+  """
+  with open(os.path.join(folder, "accuracy.txt"), 'w', encoding="utf-8") as f:
+    f.write("Parameter settings:" + "\n")
+    f.write("epoch : " + str(epoch) + "\n")
+    f.write("batch_size : " + str(batch_size) + "\n")
+    f.write("learning_rate : " + str(learning_rate) + "\n")
+    f.write("weight_decay : " + str(weight_decay) + "\n")
+    f.write("Model result:" + "\n")
+    f.write("Accuracy : {:.4f}\n".format(Accuracy))
+    f.write("mIoU : {:.4f}\n".format(mIoU))
+    f.write("W-Recall : {:.3f}\n".format(W_Recall))
+    f.write("W-Precision : {:.3f}\n".format(W_Precision))
+    f.write("W-F1 : {:.3f}\n".format(W_F1))
+    f.write("Confusion Matrix :\n")
+    f.write("{}".format(CM))
 
